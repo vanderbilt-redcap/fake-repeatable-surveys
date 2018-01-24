@@ -11,9 +11,7 @@
 		}
 	],
 
-	"permissions": [
-		"hook_save_record"
-	],
+	"permissions": [],
 
 	"description": "Given a group of DAG IDs deletes all records, users and associated DAGs.",
 
