@@ -1,12 +1,12 @@
 {
-	"name": "Auto DAGs",
+	"name": "Delete DAGs",
 
-	"namespace": "Vanderbilt\\AutoDAGsExternalModule",
+	"namespace": "Vanderbilt\\DeleteDAGsExternalModule",
 
 	"authors": [
 		{
-			"name": "Mark McEver",
-			"email": "mark.mcever@vanderbilt.edu",
+			"name": "Eva Bascompte Moragas",
+			"email": "datacore@vanderbilt.edu",
 			"institution": "Vanderbilt University Medical Center"
 		}
 	],
@@ -15,22 +15,14 @@
 		"hook_save_record"
 	],
 
-	"description": "Automatically creates, renames, and assigns records to DAGs based on a specified field.",
-
-	"project-settings": [
-		{
-			"key": "dag-field",
-			"name": "Field used to generate DAGs",
-			"type": "field-list"
-		}
-	],
+	"description": "Given a group of DAG IDs deletes all records, users and associated DAGs.",
 
 	"links": {
 		"project": [
 			{
-				"name": "Set DAG for all records",
+				"name": "Delete DAGs",
 				"icon": "report",
-				"url": "set-all-dags"
+				"url": "delete-dags-config"
 			}
 		]
 	}
