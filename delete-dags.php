@@ -5,7 +5,7 @@ use ExternalModules\AbstractExternalModule;
 use ExternalModules\ExternalModules;
 
 require_once 'DeleteDAGsExternalModule.php';
-\
+
 $dagIDs = $_POST['dagIDs'];
 $dags = "";
 $message = "";
