@@ -5,9 +5,7 @@ use ExternalModules\AbstractExternalModule;
 use ExternalModules\ExternalModules;
 
 require_once 'DeleteDAGsExternalModule.php';
-
-//$module = new DeleteDAGsExternalModule();
-
+\
 $dagIDs = $_POST['dagIDs'];
 $dags = "";
 $message = "";
@@ -26,11 +24,11 @@ if (strpos($dagIDs, ";") !== false) {
     $message = 'format';
 }
 
-//if($dags != ""){
-//    foreach ($dags as $id){
-//        $module->delete_dags($id);
-//    }
-//}
+if($dags != ""){
+    foreach ($dags as $id){
+        $module->deleteDAG($id);
+    }
+}
 
 echo json_encode(array(
     'status' => 'success',
