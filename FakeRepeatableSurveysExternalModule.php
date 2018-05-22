@@ -171,6 +171,14 @@ class FakeRepeatableSurveysExternalModule extends \ExternalModules\AbstractExter
         return false;
     }
 
+    /**
+     * Function like the file in REDCap that copies and instrument and makes it repeatable
+     * @param $project_id
+     * @param $page
+     * @param $form_label
+     * @param $affix
+     * @param bool $repeatable
+     */
     function copy_instrument($project_id, $page, $form_label, $affix, $repeatable=false){
         global $Proj, $surveys_enabled, $status, $lang, $draft_mode;
 
