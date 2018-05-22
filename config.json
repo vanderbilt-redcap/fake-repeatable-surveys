@@ -15,7 +15,7 @@
 
 	"no-auth-pages":["makeInstrumentRepeatable"],
 
-	"description": "Given a soruce survey, it creates a repeatable project copy to act as if we had a repeatable survey.",
+	"description": "Given a source survey, it creates a copy that will act as if we had a repeatable survey.",
 
 	"project-settings": [
 		{
