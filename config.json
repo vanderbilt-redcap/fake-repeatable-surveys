@@ -1,7 +1,7 @@
 {
-	"name": "Delete DAGs",
+	"name": "Fake Repeatable Surveys",
 
-	"namespace": "Vanderbilt\\DeleteDAGsExternalModule",
+	"namespace": "Vanderbilt\\FakeRepeatableSurveysExternalModule",
 
 	"authors": [
 		{
@@ -11,17 +11,45 @@
 		}
 	],
 
-	"permissions": [],
+	"permissions": ["redcap_survey_page","redcap_module_save_configuration","hook_survey_complete", "hook_save_record"],
 
-	"description": "Given a group of DAG IDs deletes all records, users and associated DAGs.",
+	"no-auth-pages":["makeInstrumentRepeatable"],
 
-	"links": {
-		"project": [
-			{
-				"name": "Delete DAGs",
-				"icon": "report",
-				"url": "delete-dags-config"
-			}
-		]
-	}
+	"description": "Given a soruce survey, it creates a repeatable project copy to act as if we had a repeatable survey.",
+
+	"project-settings": [
+		{
+			"key": "repeatable-survey",
+			"name": "Repeatable Survey",
+			"required": true,
+			"type": "sub_settings",
+			"repeatable":true,
+			"sub_settings":[
+				{
+					"key":"description",
+					"name":"If an instrument with <strong>variable_name + suffix</strong> already exists, the new instrument won't be created.",
+					"type":"descriptive"
+				},
+				{
+					"key": "survey-origin",
+					"name": "Survey",
+					"required": true,
+					"type": "form-list"
+				},
+				{
+					"key": "survey-destination",
+					"name": "New instrument name",
+					"required": true,
+					"type": "text"
+				},
+				{
+					"key": "suffix",
+					"name": "Suffix appended to variable names",
+					"required": true,
+					"type": "text"
+				}
+			]
+		}
+
+	]
 }
