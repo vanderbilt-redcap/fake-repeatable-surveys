@@ -63,9 +63,10 @@ class FakeRepeatableSurveysExternalModule extends \ExternalModules\AbstractExter
         $this->saveFakeSurvey($project_id,$record,$instrument,$event_id,$instance);
     }
 
-    function hook_save_record ($project_id,$record,$instrument,$event_id, $group_id, $survey_hash,$response_id, $instance){
-        $this->saveFakeSurvey($project_id,$record,$instrument,$event_id,$instance);
-    }
+//    function hook_save_record ($project_id,$record,$instrument,$event_id, $group_id, $survey_hash,$response_id, $instance){
+//        echo "hook_save_record<br>";
+//        $this->saveFakeSurvey($project_id,$record,$instrument,$event_id,$instance);
+//    }
 
     function saveFakeSurvey($project_id,$record,$instrument,$event_id,$instance){
         if(isset($project_id)){
