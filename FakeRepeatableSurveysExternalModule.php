@@ -45,13 +45,11 @@ class FakeRepeatableSurveysExternalModule extends \ExternalModules\AbstractExter
                 if($survey_origin[$index] == $instrument){
                     //Reset survey values
                     echo "<script>$(function(){
-                                        window.onload = function(){
-                                            $(':input','#form')
-                                                 .not(':button, :submit, :reset, :hidden')
-                                                 .val('')
-                                                 .removeAttr('checked')
-                                                 .removeAttr('selected');
-                                        };
+                                $(':input','#form')
+                                     .not(':button, :submit, :reset, :hidden')
+                                     .val('')
+                                     .removeAttr('checked')
+                                     .removeAttr('selected');
                                   });
                           </script>";
                 }
