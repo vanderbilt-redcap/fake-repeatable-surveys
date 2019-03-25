@@ -40,13 +40,14 @@ class FakeRepeatableSurveysExternalModule extends \ExternalModules\AbstractExter
         if(isset($project_id)){
             $repeatable_survey = empty($this->getProjectSetting('repeatable-survey')) ? array() : $this->getProjectSetting('repeatable-survey');
             $survey_origin = empty($this->getProjectSetting('survey-origin'))?array():$this->getProjectSetting('survey-origin');
+            $survey_reset = empty($this->getProjectSetting('survey-reset'))?array():$this->getProjectSetting('survey-reset');
 
             foreach ($repeatable_survey as $index=>$survey) {
-                if($survey_origin[$index] == $instrument){
+                if($survey_origin[$index] == $instrument && $survey_reset[$index] == '1'){
                     //Reset survey values
                     echo "<script>$(function(){
                                 $(':input','#form')
-                                     .not(':button, :submit, :reset, :hidden')
+                                     .not(':button, :submit, :reset, :hidden, :disabled')
                                      .val('')
                                      .removeAttr('checked')
                                      .removeAttr('selected');
@@ -60,11 +61,6 @@ class FakeRepeatableSurveysExternalModule extends \ExternalModules\AbstractExter
     function hook_survey_complete ($project_id,$record,$instrument,$event_id, $group_id, $survey_hash,$response_id, $instance){
         $this->saveFakeSurvey($project_id,$record,$instrument,$event_id,$instance);
     }
-
-//    function hook_save_record ($project_id,$record,$instrument,$event_id, $group_id, $survey_hash,$response_id, $instance){
-//        echo "hook_save_record<br>";
-//        $this->saveFakeSurvey($project_id,$record,$instrument,$event_id,$instance);
-//    }
 
     function saveFakeSurvey($project_id,$record,$instrument,$event_id,$instance){
         if(isset($project_id)){

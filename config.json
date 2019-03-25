@@ -47,6 +47,16 @@
 					"name": "Suffix appended to variable names",
 					"required": true,
 					"type": "text"
+				},
+				{
+					"key": "survey-reset",
+					"name": "Reset survey?",
+					"type": "checkbox"
+				},
+				{
+					"key": "reset_desc",
+					"name": "<ul style='color:red;font-style: italic;'><li>Checking this option will reset all survey values instead of loading saved values.</li><li><b>Readonly</b> variables will keep their value.</li></ul>",
+					"type": "descriptive"
 				}
 			]
 		}
